@@ -34,6 +34,7 @@ function dataURLtoFile(dataurl, filename) {
     return new File([u8arr], filename, { type: mime });
 }
 
+
 async function predict() {
     if (!originalImage.src) {
         console.error("No image selected.");
@@ -48,6 +49,7 @@ async function predict() {
             method: "POST",
             body: formData
         });
+        
 
         if (!response.ok) {
             throw new Error(`HTTP error ${response.status}`);
@@ -62,6 +64,8 @@ async function predict() {
         console.error(error);
     }
 }
+
+
 
 
 fileInput.addEventListener("change", function() {
